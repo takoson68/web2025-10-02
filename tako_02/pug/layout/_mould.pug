@@ -1,0 +1,32 @@
+//- _mould.pug
+doctype html
+html(lang="zh-Hant")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    block meta
+
+    title #{title || 'Default Title'}
+
+    //- 預設樣式區
+    //- link(rel="stylesheet", href="/styles.css")
+    block styles
+
+    //- 預設腳本區（先載入的依賴）
+    //- script(src="/jquery.js")
+    block headScripts
+  
+  body 
+    
+    block header
+
+
+    main#content
+      block content
+
+    block footer
+
+  //- 預設放在 body 結尾的腳本
+  block scripts
+    //- script(src="/main.js")
