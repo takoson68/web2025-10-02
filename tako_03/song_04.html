@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暗湧 - 王菲</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. 整體頁面設定 --- */
+        body {
+            /* 背景色：使用深灰藍漸層，比純黑色更有層次 */
+            background-color: #1a1a2e;
+            background-image: linear-gradient(180deg, #16213e, #0f3460, #1a1a2e);
+            
+            /* 字體設定：預設使用無襯線字體，顏色為帶透明度的白色，避免刺眼 */
+            font-family: 'Noto Sans TC', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+
+            /* 讓頁面內容垂直置中，並移除預設邊界 */
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 50px 20px; /* 上下左右留白 */
+            box-sizing: border-box;
+            overflow-x: hidden; /* 防止 iframe 造成水平滾動條 */
+        }
+
+        /* --- 2. 內容容器 --- */
+        .container {
+            /* 設定內容最大寬度，避免在寬螢幕上過於分散 */
+            max-width: 600px;
+            width: 100%;
+            text-align: center; /* 讓內部所有文字都置中 */
+        }
+
+        /* --- 3. 標題區塊 --- */
+        header h1 {
+            /* 歌名：使用有襯線的宋體，增加文學感 */
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2.5em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 5px;
+        }
+
+        header p {
+            /* 作者資訊 */
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0;
+            margin-bottom: 30px; /* 和影片之間增加間距 */
+        }
+
+        /* --- 4. YouTube 影片嵌入 --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+            margin: 0 auto 40px auto; /* 上下留白 */
+            border: 1px solid rgba(224, 192, 117, 0.3); /* 邊框呼應呼吸燈 */
+            box-shadow: 0 0 15px rgba(224, 192, 117, 0.1); /* 微弱光暈 */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: brightness(0.8) contrast(1.1); /* 調整影片亮度對比，使其更融入氛圍 */
+        }
+        
+        /* --- 5. 歌詞區塊 --- */
+        .lyrics p {
+            font-size: 1.1em;
+            line-height: 2; /* 增加行高，讓文字不擁擠 */
+            
+            /* 動態效果準備：預設透明，並稍微向下移動 */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out; /* 設定過渡動畫效果 */
+        }
+
+        /* 當 p 標籤被加上 .visible class 時，觸發淡入效果 */
+        .lyrics p.visible {
+            opacity: 0.7; /* 最終顯示的透明度 */
+            transform: translateY(0);
+        }
+
+        /* 滑鼠懸停效果：滑鼠移到歌詞上時，文字變亮 */
+        .lyrics p:hover {
+            opacity: 1;
+            cursor: default;
+        }
+        
+        /* --- 6. 呼吸燈效果 --- */
+        .breathing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: rgba(224, 192, 117, 0.5); /* 點綴色：微弱的金色 */
+            border-radius: 50%;
+            margin: 40px auto; /* 上下留白，並水平居中 */
+            
+            /* 綁定 "breathe" 動畫 */
+            animation: breathe 5s infinite ease-in-out;
+        }
+
+        /* 定義 "breathe" 動畫的關鍵影格 */
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        /* 影片下方的原始連結，可選擇保留或隱藏 */
+        .original-link {
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+        .original-link a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .original-link a:hover {
+            color: rgba(224, 192, 117, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>暗湧 - gemini</h1>
+            <p>作詞：林夕 / 作曲：陳輝陽 / 演唱：王菲</p>
+        </header>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ViyMvIBAep8?si=OKlmLSx5NXOin_w1"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="breathing-dot"></div>
+
+        <div class="lyrics">
+            <p>就算天空再深 看不出裂痕 眉頭仍聚滿密雲</p>
+            <p>就算一屋暗燈 照不穿我身 仍可反映你心</p>
+            <p>讓這口煙跳昇 我身軀下沉 曾多麼想多麼想貼近</p>
+            <p>你的心和眼口和耳亦沒緣份 我都捉不緊</p>
+            <br>
+            <p>害怕悲劇重演 我的命中命中 越美麗的東西我越不可碰</p>
+            <p>歷史在重演 這麼煩囂城中 沒理由相戀可以沒有暗湧</p>
+            <p>其實我再去愛惜你又有何用 難道這次我抱緊你未必落空</p>
+            <br>
+            <p>仍靜候著你說我別錯用神 甚麼我都有預感</p>
+            <p>然後睜不開兩眼 看命運光臨 然後天空又再湧起密雲</p>
+            <br>
+            <p>就算天空再深 看不出裂痕 眉頭仍聚滿密雲</p>
+            <p>就算一屋暗燈 照不穿我身 仍可反映你心</p>
+            <p>讓這口煙跳昇 我身軀下沉 曾多麼想多麼想貼近</p>
+            <p>你的心和眼口和耳亦沒緣份 我都捉不緊</p>
+            <br>
+            <p>害怕悲劇重演 我的命中命中 越美麗的東西我越不可碰</p>
+            <p>歷史在重演 這麼煩囂城中 沒理由相戀可以沒有暗湧</p>
+            <p>其實我再去愛惜你又有何用 難道這次我抱緊你未必落空</p>
+            <br>
+            <p>仍靜候著你說我別錯用神 甚麼我都有預感</p>
+            <p>然後睜不開兩眼 看命運光臨 然後天空又再湧起密雲</p>
+            <br>
+            <p>仍靜候著你說我別錯用神 甚麼我都有預感</p>
+            <p>然後睜不開兩眼 看命運光臨 然後天空又再湧起密雲</p>
+            <p>然後天空又再湧起密雲</p>
+        </div>
+
+        <p class="original-link">
+          <a href="https://youtu.be/xwI8pYCRTcU?si=CX0Dh0UwAlGa3zqW" target="_blank">播放完整歌曲 (YouTube)</a>
+        </p>
+
+    </div>
+
+    <script>
+        // --- JavaScript 用來實現歌詞滾動淡入效果 ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const lyricLines = document.querySelectorAll('.lyrics p');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5 // 當元素的可見度達到 50% 時觸發
+            });
+
+            lyricLines.forEach(line => {
+                observer.observe(line);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TABLE</title>
+  <style>
+    table {
+      width: 100%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: 'Noto Serif TC', serif;
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      
+    }
+    td + td {
+      border-left: 1px solid #ccc
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.2em;
+    }
+
+    td {
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f1f1f1;
+    }
+
+    tr:hover td {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>HTML table</h1>
+  <table>
+    <tr>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+  </table>
+
+    <table>
+    <tr>
+      <td>11</td>
+      <td colspan="2">12</td>
+      <!-- <td>13</td> -->
+    </tr>
+    <tr>
+      <td rowspan="2">21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <!-- <td>31</td> -->
+      <td>32</td>
+      <td>33</td>
+    </tr>
+  </table>
+</body>
+
+</html>
