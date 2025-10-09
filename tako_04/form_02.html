@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 標單</title>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'Heiti TC', '黑體', sans-serif;
+      background: #333;
+      padding: 20px;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #cccccc3b;
+      border-radius: 10px;
+      box-shadow: 0 0 1em rgba(0, 0, 0, 0.65);
+      border: 2px solid #7a7575;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-top: 0.5em;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>HTML form 標單</h1>
+  <form action="/action_page.php" method="get">
+    <fieldset>
+      <legend>登入資訊</legend>
+
+
+    <label for="username">使用者名稱:
+      <input type="text" id="username" name="username" placeholder="請輸入使用者名稱">
+    </label>
+    <label for="password">密碼:
+      <input type="password" id="password" name="password" placeholder="請輸入password">
+    </label>
+    <label for="email">電子郵件:
+      <input type="email" id="email" name="email" placeholder="請輸入email">
+    </label>
+
+    <!-- form 表單 input type練習 -->
+
+    <br>
+    <p>選擇你的性別:
+      <label>
+        <input type="radio" id="male" name="gender" value="male">
+        男
+      </label>
+      <label>
+        <input type="radio" id="female" name="gender" value="female">
+        女
+      </label>
+    </p>
+    <br>
+    <p>選擇你的交通工具( 可多選 ):
+      <label>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        我有一台腳踏車
+      </label>
+      <label>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        我有一台汽車
+      </label>
+      <label>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        我有一艘船
+      </label>
+        <label>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        我開飛機
+      </label>   
+    </p>
+
+    <br><br>
+
+    <hr><br>
+    <input type="submit" value="提交"><br><br>
+    
+    </fieldset>
+  </form>
+</body>
+
+</html>

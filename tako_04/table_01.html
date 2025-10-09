@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>課表</title>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'Heiti TC', '黑體', sans-serif;
+      background: #333;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 1em rgba(0, 0, 0, 0.65);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.2em;
+    }
+    td {
+      background-color: #f9f9f9;
+    }
+    tr:nth-child(even) td {
+      background-color: #f1f1f1;
+    }
+    tr:hover td {
+      background-color: #dddddd;
+    }
+    tr td:first-child {
+      background-color: rgb(229, 241, 226);
+      color: #3f6444;
+      font-size: .8em;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>節數</th>
+      <th>一</th>
+      <th>二</th>
+      <th>三</th>
+      <th>四</th>
+      <th>五</th>
+    </tr>
+    <tr>
+      <td>早自習<br> 07:50 - 08:30 </td>
+      <td colspan="5"></td>
+      <!-- <td></td>
+      <td></td>
+      <td></td>
+      <td></td> -->
+    </tr>
+    <tr>
+      <td>第一節<br>08:40 - 09:20</td>
+      <td rowspan="2">國語<br>劉展華</td>
+      <td colspan="3">數學<br>劉展華</td>
+      <!-- <td></td> -->
+      <td>國語<br>劉展華</td>
+    </tr>
+    <tr>
+      <td>第二節<br>09:30 - 10:10</td>
+      <!-- <td></td> -->
+      <td>自然<br>黃新民</td>
+      <td>音樂<br>萬巧如</td>
+      <td>國語<br>劉展華</td>
+      <td>彈性<br>劉展華</td>
+    </tr>
+    <tr>
+      <td>第三節<br>10:30 - 11:10</td>
+      <td>數學<br>劉展華</td>
+      <td>健康<br>潘文欽</td>
+      <td>國語<br>劉展華</td>
+      <td>鄉土<br>魏士欽</td>
+      <td rowspan="2">自然<br>黃新民</td>
+    </tr>
+    <tr>
+      <td>第四節<br>11:20 - 12:00</td>
+      <td>英語<br>黃定宜</td>
+      <td>彈性<br>劉展華</td>
+      <td>社會<br>劉展華</td>
+      <td>英語<br>黃定宜</td>
+      <!-- <td></td> -->
+    </tr>
+    <tr>
+      <td>午休時間<br> 12:00 - 13:20</td>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+      <td>第五節<br>13:30 - 14:10</td>
+      <td>社會<br>劉展華</td>
+      <td rowspan="2">美勞<br>許文傑</td>
+      <td rowspan="3"></td>
+      <td rowspan="3">綜合<br>劉展華</td>
+      <td>體育<br>潘文欽</td>
+    </tr>
+    <tr>
+      <td>第六節<br>14:20 - 15:00</td>
+      <td>體育<br>潘文欽</td>
+      <!-- <td></td> -->
+      <!-- <td></td> -->
+      <!-- <td></td> -->
+      <td>國語<br>劉展華</td>
+    </tr>
+        <tr>
+      <td>第七節<br>15:20 - 16:00</td>
+      <td colspan="2">彈性<br>劉展華</td>
+      <!-- <td></td> -->
+      <!-- <td></td>
+      <td></td> -->
+      <td>社會<br>劉展華</td>
+    </tr>
+  </table>
+</body>
+</html>
