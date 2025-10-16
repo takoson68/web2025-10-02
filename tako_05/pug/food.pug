@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet" href="./css/style_01.css")
+  body 
+    h2 餐廳超連結 
+    //- p
+      a(target="_blank" href="./f1.html") f1
+      |  
+      a( target="_blank" href="./f2.html") f2
+      |  
+      a( target="_blank" href="./f3.html") f3
+    - u_href = "https://www.vogue.com.tw/lifestyle/galerie/%E5%8F%B0%E5%8C%97-%E7%BE%A9%E5%A4%A7%E5%88%A9"
+    ul 
+      li(style="background-image: url(./images/pic1.webp);")
+        a(target="_blank", href=u_href+"#chara1") 
+          |Bencotto義式餐廳
+      li(style="background-image:url(./images/pic2.webp);")
+        a(target="_blank", href=u_href+"#chara2") 
+          |TUTTO BELLO 酒庫
+      li(style="background-image:url(./images/pic3.webp);")
+        a(target="_blank", href=u_href+"#chara4") 
+          |Ziga Zaga
+      li(style="background-image:url(./images/pic4.webp);")
+        a(target="_blank", href=u_href+"#chara5") 
+          |Botega del Vin Taipei
+      li(style="background-image:url(./images/pic5.webp);")
+        a(target="_blank", href=u_href+"#chara6") 
+          |solo pasta
+      li(style="background-image:url(./images/pic6.webp);")
+        a(target="_blank", href=u_href+"#chara7") 
+          |Snail 蝸牛義大利餐廳
+      li(style="background-image:url(./images/pic7.webp);")
+        a(target="_blank", href=u_href+"#chara8") 
+          |DiVino Taipei
+      li(style="background-image:url(./images/pic8.webp);")
+        a(target="_blank", href=u_href+"#chara10") 
+          |Fermi Pasta
+      li(style="background-image:url(./images/pic9.webp);")
+        a(target="_blank", href=u_href+"#chara11") 
+          |驢子餐廳
+      li(style="background-image:url(./images/pic10.webp);")
+        a(target="_blank", href=u_href+"#chara12") 
+          |你家樓下
+
+
+
