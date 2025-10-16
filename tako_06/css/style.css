@@ -33,7 +33,7 @@ body .robot .antenna::before {
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  animation: shine 1s infinite alternate;
+  animation: shine 3s infinite alternate;
 }
 body .robot .head {
   width: 200px;
@@ -172,21 +172,6 @@ body .robot .body .screen .line1, body .robot .body .screen .line2, body .robot 
   animation: line-scale 1s infinite;
   animation-timing-function: ease-in-out;
 }
-body .robot .body .screen .line2 {
-  animation-delay: 0.16s;
-}
-body .robot .body .screen .line3 {
-  animation-delay: 0.32s;
-}
-body .robot .body .screen .line4 {
-  animation-delay: 0.48s;
-}
-body .robot .body .screen .line5 {
-  animation-delay: 0.64s;
-}
-body .robot .body .screen .line6 {
-  animation-delay: 0.8s;
-}
 body .robot .body .screen .line1 {
   width: 60px;
   height: 10px;
@@ -196,26 +181,31 @@ body .robot .body .screen .line2 {
   width: 80px;
   height: 10px;
   top: 35px;
+  animation-delay: 0.16s;
 }
 body .robot .body .screen .line3 {
   width: 40px;
   height: 10px;
   top: 55px;
+  animation-delay: 0.32s;
 }
 body .robot .body .screen .line4 {
   width: 90px;
   height: 5px;
   top: 85px;
+  animation-delay: 0.48s;
 }
 body .robot .body .screen .line5 {
   width: 70px;
   height: 5px;
   top: 95px;
+  animation-delay: 0.64s;
 }
 body .robot .body .screen .line6 {
   width: 50px;
   height: 5px;
   top: 105px;
+  animation-delay: 0.8s;
 }
 body .robot .arm {
   width: 150px;
@@ -283,10 +273,20 @@ body .robot .leg.leg-right {
 
 @keyframes shine {
   0% {
-    box-shadow: 0 0 10px 2px #fff, 0 0 30px 10px #ff0000;
+    box-shadow: 0 0 10px 2px #fff, 0 0 30px 10px #ff7f50;
+    background-color: #ff7f50;
+  }
+  33% {
+    box-shadow: 0 0 20px 6px #fff, 0 0 40px 15px #7fffd4;
+    background-color: #7fffd4;
+  }
+  66% {
+    box-shadow: 0 0 25px 8px #fff, 0 0 50px 18px #9370db;
+    background-color: #9370db;
   }
   100% {
-    box-shadow: 0 0 30px 10px #fff, 0 0 60px 20px #ff0000;
+    box-shadow: 0 0 30px 10px #fff, 0 0 60px 20px #ff7f50;
+    background-color: #ff7f50;
   }
 }
 @keyframes line-scale {
