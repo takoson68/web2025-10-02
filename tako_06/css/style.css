@@ -1,0 +1,321 @@
+body {
+  background-color: #f0f0f0;
+}
+body .robot {
+  width: 300px;
+  height: 560px;
+  background-color: #831818;
+  border: 5px solid #000;
+  margin: 100px auto;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+body .robot .antenna {
+  width: 10px;
+  height: 50px;
+  background-color: #000;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  z-index: 2;
+}
+body .robot .antenna::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: shine 1s infinite alternate;
+}
+body .robot .head {
+  width: 200px;
+  height: 200px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 5px solid #000;
+  z-index: 2;
+}
+body .robot .head .eye {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  border: 5px solid #000;
+  box-sizing: border-box;
+}
+body .robot .head .eye::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-25px);
+  animation: eye-move 4s infinite;
+}
+body .robot .head .eye.left {
+  left: 40px;
+}
+body .robot .head .eye.left::before {
+  animation-delay: 0s;
+}
+body .robot .head .eye.right {
+  right: 40px;
+}
+body .robot .head .eye.right::before {
+  animation-delay: 1s;
+}
+body .robot .head .nose {
+  width: 20px;
+  height: 20px;
+  background-color: #ff6666;
+  border-radius: 50%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #000;
+  box-sizing: border-box;
+}
+body .robot .head .mouth {
+  width: 100px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 0 0 50px 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .robot .head .mouth::before {
+  content: "";
+  width: 60px;
+  height: 20px;
+  background-color: #ff6666;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+body .robot .body {
+  width: 150px;
+  height: 200px;
+  background-color: #ffcc00;
+  border: 5px solid #000;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 5px;
+  position: relative;
+}
+body .robot .body .neck {
+  width: 50px;
+  height: 35px;
+  background-color: #ffcc00;
+  border: 5px solid #000;
+  box-sizing: border-box;
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+body .robot .body .detail {
+  width: 100px;
+  height: 130px;
+  background-color: #ffff66;
+  border-radius: 10px;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  border: 5px solid #000;
+  z-index: 0;
+}
+body .robot .body .screen {
+  width: 100px;
+  height: 130px;
+  background-color: #000;
+  border: 5px solid #000;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  z-index: 1;
+}
+body .robot .body .screen div {
+  background-color: #00ff00;
+  position: absolute;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  left: 50%;
+}
+body .robot .body .screen .line1, body .robot .body .screen .line2, body .robot .body .screen .line3, body .robot .body .screen .line4, body .robot .body .screen .line5, body .robot .body .screen .line6 {
+  animation: line-scale 1s infinite;
+  animation-timing-function: ease-in-out;
+}
+body .robot .body .screen .line2 {
+  animation-delay: 0.16s;
+}
+body .robot .body .screen .line3 {
+  animation-delay: 0.32s;
+}
+body .robot .body .screen .line4 {
+  animation-delay: 0.48s;
+}
+body .robot .body .screen .line5 {
+  animation-delay: 0.64s;
+}
+body .robot .body .screen .line6 {
+  animation-delay: 0.8s;
+}
+body .robot .body .screen .line1 {
+  width: 60px;
+  height: 10px;
+  top: 15px;
+}
+body .robot .body .screen .line2 {
+  width: 80px;
+  height: 10px;
+  top: 35px;
+}
+body .robot .body .screen .line3 {
+  width: 40px;
+  height: 10px;
+  top: 55px;
+}
+body .robot .body .screen .line4 {
+  width: 90px;
+  height: 5px;
+  top: 85px;
+}
+body .robot .body .screen .line5 {
+  width: 70px;
+  height: 5px;
+  top: 95px;
+}
+body .robot .body .screen .line6 {
+  width: 50px;
+  height: 5px;
+  top: 105px;
+}
+body .robot .arm {
+  width: 150px;
+  height: 30px;
+  background-color: #ffcc00;
+  border: 5px solid #000;
+  box-sizing: border-box;
+  position: absolute;
+  top: 250px;
+  border-radius: 15px;
+  z-index: 1;
+}
+body .robot .arm::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #ffcc00;
+  border: 5px solid #000;
+  box-sizing: border-box;
+  position: absolute;
+  top: -5px;
+  border-radius: 50%;
+}
+body .robot .arm.arm-left {
+  left: -70px;
+}
+body .robot .arm.arm-left::after {
+  left: -10px;
+}
+body .robot .arm.arm-right {
+  right: -70px;
+}
+body .robot .arm.arm-right::after {
+  right: -10px;
+}
+body .robot .leg {
+  width: 40px;
+  height: 150px;
+  background-color: #ffcc00;
+  border: 5px solid #000;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: -20px;
+  border-radius: 20px;
+  z-index: 1;
+}
+body .robot .leg::after {
+  content: "";
+  width: 50px;
+  height: 30px;
+  background-color: #ffcc00;
+  border: 5px solid #000;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: -10px;
+  border-radius: 15px;
+  left: -10px;
+}
+body .robot .leg.leg-left {
+  left: 70px;
+}
+body .robot .leg.leg-right {
+  right: 70px;
+}
+
+@keyframes shine {
+  0% {
+    box-shadow: 0 0 10px 2px #fff, 0 0 30px 10px #ff0000;
+  }
+  100% {
+    box-shadow: 0 0 30px 10px #fff, 0 0 60px 20px #ff0000;
+  }
+}
+@keyframes line-scale {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.25);
+  }
+}
+@keyframes eye-move {
+  0% {
+    top: 15px;
+    left: 25px;
+  }
+  25% {
+    top: 5px;
+    left: 35px;
+  }
+  50% {
+    top: 15px;
+    left: 45px;
+  }
+  75% {
+    top: 25px;
+    left: 35px;
+  }
+  100% {
+    top: 15px;
+    left: 25px;
+  }
+}
