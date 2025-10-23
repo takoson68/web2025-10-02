@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.box {
+  width: 400px;
+  height: 400px;
+  background-color: #eee;
+  box-sizing: border-box;
+  margin: 50px auto;
+  position: relative;
+}
+.box span {
+  display: inline-flex;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.3);
+}
+.box span big {
+  margin: 0;
+  position: absolute;
+  font-size: 3em;
+  color: #fff;
+}
+.box span.box01 {
+  margin-bottom: 50%;
+  margin-right: -50%;
+  background-color: orange;
+}
+.box span.box02 {
+  width: 25%;
+  margin-left: -25%;
+  background-color: green;
+}
+.box span.box03 {
+  background-color: red;
+}
+.box span.box04 {
+  margin-right: 25%;
+  width: 25%;
+  background-color: blue;
+}
+.box span.box05 {
+  margin-top: -4px;
+  width: 25%;
+  background-color: purple;
+}
+.box span.box06 {
+  margin-top: -4px;
+  width: 25%;
+  background-color: brown;
+}
