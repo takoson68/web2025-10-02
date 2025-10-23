@@ -1,0 +1,36 @@
+body
+  // background-color: red
+  font-family: Arial, sans-serif
+
+.box 
+  width: 400px
+  height: 400px
+  background-color: #eee
+  box-sizing: border-box
+  margin: 50px auto
+  position: relative
+  span
+    display: inline-flex
+    width: 50%
+    height: 50%
+    box-sizing: border-box
+    align-items: center
+    justify-content: center
+    big 
+      margin: 0
+      position: absolute
+      font-size: 3em
+      color: #fff
+    &.box01 
+      margin-bottom: 50%
+      margin-right: -50%
+      background-color: orange
+    &.box02 
+      margin-left: -50%
+      background-color: green
+    &.box03 
+      margin-left: 50%
+      background-color: red
+    &.box04 
+      background-color: blue
+      margin-top: -4px
