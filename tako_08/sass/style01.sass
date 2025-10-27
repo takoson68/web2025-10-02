@@ -18,6 +18,15 @@ h1
     align-items: center
     justify-content: center
     box-shadow: 15px 15px 5px rgba(0,0,0,0.3)
+    position: relative
+    // z-index: 1
+    &::after
+      z-index: 2
+      content: " "
+      display: block
+      position: absolute
+      bottom: -10px
+      left: -4px
     big 
       margin: 0
       position: absolute
@@ -27,21 +36,80 @@ h1
       margin-bottom: 50%
       margin-right: -50%
       background-color: orange
+      border-radius: 3em
+      &::after,&::before
+        content: " "
+        width: 40px
+        height: 40px
+        display: block
+        border: 15px solid #000
+        position: absolute
+        background-color: #fff
+        border-radius: 50%
+        position: absolute
+        top: 50px
+      &::after
+        left: 25px
+      &::before
+        right: 25px
+        
     &.box02 
       width: 25%
       margin-left: -25%
       background-color: green
+      border-top-left-radius: 1em
+      &::after
+        width: 100%
+        height: 50px
+        background-color: green
+        border: 8px solid #000
+        position: absolute
+        bottom: -10px
+        left: -8px
+        position: absolute
+        border-radius: 6px
     &.box03 
       background-color: red
     &.box04 
       margin-right: 25%
       width: 25%
       background-color: blue
+      border-top-right-radius: 1em
+      &::after
+        width: 100%
+        height: 50px
+        background-color: blue
+        border: 8px solid #000
+        position: absolute
+        bottom: -10px
+        left: -8px
+        position: absolute
+        border-radius: 6px
     &.box05 
       margin-top: -4px
       width: 25%
       background-color: purple  
+      &::after
+        width: 100%
+        height: 50px
+        background-color: purple
+        border: 8px solid #000
+        position: absolute
+        bottom: -10px
+        left: -16px
+        position: absolute
+        border-radius: 6px
     &.box06 
       margin-top: -4px
       width: 25%
       background-color: brown
+      &::after
+        width: 100%
+        height: 50px
+        background-color: brown
+        border: 8px solid #000
+        position: absolute
+        bottom: -10px
+        left: 0px
+        position: absolute
+        border-radius: 6px
