@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="./css/style2.css")
+    style 
+      //- include ../css/style.css 
+  body 
+    .layout
+      // 隱藏 radio input
+      input(type="radio" name="tab" id="tab1" checked)
+      input(type="radio" name="tab" id="tab2")
+      input(type="radio" name="tab" id="tab3")
+      input(type="radio" name="tab" id="tab4")
+      input(type="radio" name="tab" id="tab5")
+      input(type="radio" name="tab" id="tab6")
+      // 左側固定
+      nav.sidebar
+        label(for="tab1") 頁面1
+        label(for="tab2") 頁面2
+        label(for="tab3") 頁面3
+        label(for="tab4") 頁面4
+        label(for="tab5") 頁面5
+        label(for="tab6") 頁面6
+
+
+      // 右側內容
+      #content1.content 內容 1
+      #content2.content 內容 2
+      #content3.content 內容 3
+      #content4.content 內容 4
+      #content5.content 內容 5
+      #content6.content 內容 6

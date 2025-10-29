@@ -5,6 +5,51 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Document
     link(rel="stylesheet", href="./css/style.css")
+    style 
+      //- include ../css/style.css 
   body 
     h1 Hello, Pug!
     p This is a sample Pug template.
+    a(href="#") A
+    a(href="#") B
+    a(href="#") C
+    
+    br
+    hr
+    br 
+    //- div.item$*3{項目 $}
+    .item1 項目 1
+    .item2 項目 2
+    .item3 項目 3
+    //- div#box$*3>span{第 $ 項}
+    #box1
+      span 第 1 項
+    #box2
+      span 第 2 項
+    #box3
+      span 第 3 項
+
+
+    //- .fox$*3>span.bor$*3{共有 $ 個}
+    
+    //- .fox$*3>span.bor$*3{共有 $ 個}+span.tatle{共 $@3}
+    .fox1
+      span.bor1 共有 1 個
+      span.bor2 共有 2 個
+      span.bor3 共有 3 個
+      span.tatle 共 9
+    .fox2
+      span.bor1 共有 1 個
+      span.bor2 共有 2 個
+      span.bor3 共有 3 個
+      span.tatle 共 10
+    .fox3
+      span.bor1 共有 1 個
+      span.bor2 共有 2 個
+      span.bor3 共有 3 個
+      span.tatle 共 11
+
+
+
+
+

@@ -1,0 +1,59 @@
+$colors: #ff6fa7 #ffa94d #ffcd4d #8de3a9 #7bb6ff #b891f9
+body 
+  margin: 0
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+* 
+  scroll-behavior: smooth
+.layout
+  display: flex
+  height: 100vh
+
+  /* 隱藏 radio input */
+  input[type="radio"]
+    display: none
+
+  /* 左側導航容器 */
+  .sidebar
+    display: flex
+    flex-direction: column
+    width: 80px
+    background-color: #eee
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1)
+
+    label
+      padding: 1em
+      text-align: center
+      cursor: pointer
+      border-bottom: 1px solid #ccc
+      transition: all 0.3s
+      // text-shadow: 0 0 2px #333
+      position: relative
+  /* 內容區塊 */
+  .content
+    flex: 1
+    display: none
+    padding: 2em
+    overflow: auto
+    font-size: 2em
+  /* 用迴圈生成每個頁面的效果 */
+  @for $i from 1 through 6
+    .sidebar label[for="tab#{$i}"]
+      // color: nth($colors, $i)
+    #tab#{$i}:checked ~ .sidebar label[for="tab#{$i}"]
+      background-color: nth($colors, $i)
+      color: white
+      &::after
+        content: ""
+        position: absolute
+        right: -1em
+        top: 1.5em
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: .5em 0 .5em 1em
+        border-color: transparent transparent transparent #eee  
+        pointer-events: none
+        opacity: .75
+    #tab#{$i}:checked ~ #content#{$i}
+      background-color: nth($colors, $i)
+      display: block

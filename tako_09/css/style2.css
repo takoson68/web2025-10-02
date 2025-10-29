@@ -1,0 +1,169 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  /* 隱藏 radio input */
+  /* 左側導航容器 */
+  /* 內容區塊 */
+  /* 用迴圈生成每個頁面的效果 */
+}
+.layout input[type=radio] {
+  display: none;
+}
+.layout .sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  background-color: #eee;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.layout .sidebar label {
+  padding: 1em;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  transition: all 0.3s;
+  position: relative;
+}
+.layout .content {
+  flex: 1;
+  display: none;
+  padding: 2em;
+  overflow: auto;
+  font-size: 2em;
+}
+.layout #tab1:checked ~ .sidebar label[for=tab1] {
+  background-color: #ff6fa7;
+  color: white;
+}
+.layout #tab1:checked ~ .sidebar label[for=tab1]::after {
+  content: "";
+  position: absolute;
+  right: -1em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #eee;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.layout #tab1:checked ~ #content1 {
+  background-color: #ff6fa7;
+  display: block;
+}
+.layout #tab2:checked ~ .sidebar label[for=tab2] {
+  background-color: #ffa94d;
+  color: white;
+}
+.layout #tab2:checked ~ .sidebar label[for=tab2]::after {
+  content: "";
+  position: absolute;
+  right: -1em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #eee;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.layout #tab2:checked ~ #content2 {
+  background-color: #ffa94d;
+  display: block;
+}
+.layout #tab3:checked ~ .sidebar label[for=tab3] {
+  background-color: #ffcd4d;
+  color: white;
+}
+.layout #tab3:checked ~ .sidebar label[for=tab3]::after {
+  content: "";
+  position: absolute;
+  right: -1em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #eee;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.layout #tab3:checked ~ #content3 {
+  background-color: #ffcd4d;
+  display: block;
+}
+.layout #tab4:checked ~ .sidebar label[for=tab4] {
+  background-color: #8de3a9;
+  color: white;
+}
+.layout #tab4:checked ~ .sidebar label[for=tab4]::after {
+  content: "";
+  position: absolute;
+  right: -1em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #eee;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.layout #tab4:checked ~ #content4 {
+  background-color: #8de3a9;
+  display: block;
+}
+.layout #tab5:checked ~ .sidebar label[for=tab5] {
+  background-color: #7bb6ff;
+  color: white;
+}
+.layout #tab5:checked ~ .sidebar label[for=tab5]::after {
+  content: "";
+  position: absolute;
+  right: -1em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #eee;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.layout #tab5:checked ~ #content5 {
+  background-color: #7bb6ff;
+  display: block;
+}
+.layout #tab6:checked ~ .sidebar label[for=tab6] {
+  background-color: #b891f9;
+  color: white;
+}
+.layout #tab6:checked ~ .sidebar label[for=tab6]::after {
+  content: "";
+  position: absolute;
+  right: -1em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #eee;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.layout #tab6:checked ~ #content6 {
+  background-color: #b891f9;
+  display: block;
+}
