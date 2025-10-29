@@ -1,20 +1,16 @@
-@charset "UTF-8";
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-}
-
-* {
-  scroll-behavior: smooth;
+  background-color: #333;
 }
 
 .layout {
   display: flex;
   height: 100vh;
-  /* 隱藏 radio input */
-  /* 左側導航容器 */
-  /* 內容區塊 */
-  /* 用迴圈生成每個頁面的效果 */
 }
 .layout input[type=radio] {
   display: none;
@@ -33,6 +29,7 @@ body {
   border-bottom: 1px solid #ccc;
   transition: all 0.3s;
   position: relative;
+  transition: all 0.5s;
 }
 .layout .content {
   flex: 1;
@@ -40,6 +37,7 @@ body {
   padding: 2em;
   overflow: auto;
   font-size: 2em;
+  animation: fadeOut 1s ease forwards;
 }
 .layout #tab1:checked ~ .sidebar label[for=tab1] {
   background-color: #ff6fa7;
@@ -61,6 +59,8 @@ body {
 .layout #tab1:checked ~ #content1 {
   background-color: #ff6fa7;
   display: block;
+  transition: all 1s;
+  animation: fadeIn 1s ease forwards;
 }
 .layout #tab2:checked ~ .sidebar label[for=tab2] {
   background-color: #ffa94d;
@@ -82,6 +82,8 @@ body {
 .layout #tab2:checked ~ #content2 {
   background-color: #ffa94d;
   display: block;
+  transition: all 1s;
+  animation: fadeIn 1s ease forwards;
 }
 .layout #tab3:checked ~ .sidebar label[for=tab3] {
   background-color: #ffcd4d;
@@ -103,6 +105,8 @@ body {
 .layout #tab3:checked ~ #content3 {
   background-color: #ffcd4d;
   display: block;
+  transition: all 1s;
+  animation: fadeIn 1s ease forwards;
 }
 .layout #tab4:checked ~ .sidebar label[for=tab4] {
   background-color: #8de3a9;
@@ -124,6 +128,8 @@ body {
 .layout #tab4:checked ~ #content4 {
   background-color: #8de3a9;
   display: block;
+  transition: all 1s;
+  animation: fadeIn 1s ease forwards;
 }
 .layout #tab5:checked ~ .sidebar label[for=tab5] {
   background-color: #7bb6ff;
@@ -145,6 +151,8 @@ body {
 .layout #tab5:checked ~ #content5 {
   background-color: #7bb6ff;
   display: block;
+  transition: all 1s;
+  animation: fadeIn 1s ease forwards;
 }
 .layout #tab6:checked ~ .sidebar label[for=tab6] {
   background-color: #b891f9;
@@ -166,4 +174,23 @@ body {
 .layout #tab6:checked ~ #content6 {
   background-color: #b891f9;
   display: block;
+  transition: all 1s;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
