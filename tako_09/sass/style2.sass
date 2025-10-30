@@ -18,7 +18,8 @@ body
     width: 80px
     background-color: #eee
     box-shadow: 2px 0 5px rgba(0,0,0,0.1)
-
+    position: relative
+    z-index: 2
     label
       padding: 1em
       text-align: center
@@ -34,8 +35,7 @@ body
     padding: 2em
     overflow: auto
     font-size: 2em
-    animation: fadeOut 1s ease forwards
-
+    position: relative
   @for $i from 1 through 6
 
     #tab#{$i}:checked ~ .sidebar label[for="tab#{$i}"]
@@ -64,14 +64,8 @@ body
 @keyframes fadeIn
   from
     opacity: 0
-
+    transform: translateX(-100px)
   to
     opacity: 1
-
+    transform: translateX(0px)
  
-@keyframes fadeOut
-  from
-    opacity: 1
-
-  to
-    opacity: 0

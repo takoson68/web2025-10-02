@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe 導航版型</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", "微軟正黑體", sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f7f7f7;
+    }
+
+    /* 左側導航 */
+    .sidebar {
+      width: 200px;
+      background: #2d3436;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #dfe6e9;
+      padding: 12px 20px;
+      transition: all 0.2s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .sidebar a:hover,
+    .sidebar a:focus {
+      background: #636e72;
+      border-left-color: #00b894;
+      color: #fff;
+    }
+
+    /* 右側 iframe 內容區 */
+    .content {
+      flex: 1;
+      background: white;
+      padding: 0;
+      border: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 版面結構容器 */
+    .layout {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- 左側固定選單 -->
+    <nav class="sidebar">
+      <a href="./web/page1.html" target="contentFrame">頁面 1</a>
+      <a href="./web/page2.html" target="contentFrame">頁面 2</a>
+      <a href="./web/page3.html" target="contentFrame">頁面 3</a>
+      <a href="./web/page4.html" target="contentFrame">頁面 4</a>
+      <a href="./web/page5.html" target="contentFrame">頁面 5</a>
+      <a href="./web/page6.html" target="contentFrame">頁面 6</a>
+    </nav>
+
+    <!-- 右側 iframe 顯示內容 -->
+    <div class="content">
+      <iframe name="contentFrame" src="./web/page1.html"></iframe>
+    </div>
+  </div>
+</body>
+</html>
