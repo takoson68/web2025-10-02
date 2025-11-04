@@ -1,0 +1,58 @@
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-color: #333;
+}
+
+.layout {
+  width: 100%;
+  margin: auto;
+  margin-top: 3em;
+  max-width: 1000px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+.layout > div {
+  position: relative;
+  width: 267px;
+  height: 390px;
+  background-image: url(../images/one.png);
+  display: inline-flex;
+  border-radius: 10px;
+  border: 5px solid #4c3d38;
+  box-shadow: inset 0 0 20px #000;
+  margin: 4px;
+  transition: all 0.3s;
+  transform: scale(1);
+  z-index: 0;
+}
+.layout > div:hover {
+  box-shadow: 0 0 40px #b3684d;
+  transform: scale(1.05);
+  z-index: 1;
+}
+.layout .img1 {
+  background-position: -357px 393px;
+}
+.layout .img2 {
+  background-position: 280px 393px;
+}
+.layout .img3 {
+  background-position: -26px 393px;
+}
+.layout .img4 {
+  background-position: -357px -13px;
+}
+.layout .img5 {
+  background-position: 280px -15px;
+}
+.layout .img6 {
+  background-position: -26px -15px;
+}
