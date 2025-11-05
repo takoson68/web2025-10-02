@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="./css/style.css")
+    style 
+      //- include ../css/style.css 
+  body 
+    .body 
+      //- 匯入共用函式
+      include ../../_pug/random-text.pug
+      //- nav>a.link.btn$*6[href="#box$"]
+      - const sections = ['特價產品','當季產品','熱銷排行','新品上市','限時折扣','推薦精選']
+      
+      nav
+        each section, index in sections
+          a.link(href=`#box${index + 1}`)= section
+
+
+      //- 外層：以陣列迴圈生成 #box1 ~ #box6
+      each section, index in sections
+        div(id=`box${index + 1}`, class='boxIn')
+          h2= section
+
+          //- 內層：每個 box 產生多個商品
+          - for (let i = 0; i < 6; i++) {
+            - const id = Math.floor(Math.random() * 100) + 1
+            .goods
+              img(src=`https://picsum.photos/id/${id}/400/300`, alt=`Product ${id}`)
+              h3 商品編號 #{id}
+              p.description= randomText(40)
+              //- 若想改用中文假文：
+              // p.description= randomChinese()
+              small
+                |特價
+                big=id*10
+                |元
+          - }
+
+      a.goTop(href="#box1") ▲
+
+

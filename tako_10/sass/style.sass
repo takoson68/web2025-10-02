@@ -1,0 +1,122 @@
+@import ../../_sass/_color_array.scss
+body
+  background-color: #eee
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+*
+  scroll-behavior: smooth
+  text-decoration: inherit
+  box-sizing: border-box
+.body
+  background-color: #ddd
+  margin: 3em auto 0 auto
+  max-width: 1200px
+  position: relative
+  nav
+    width: 100%
+    height: 3em
+    position: fixed
+    top: 0
+    left: 0
+    background-color: #fcfcfc
+    border-bottom: 1PX solid #fff
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 0 2px 4px #ccc
+    z-index: 100
+    a
+      margin: 0 1em
+      border-radius: .5em
+      padding: .5em 1em
+      color: #fff
+      
+      &.link
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        // padding: .5em 1em
+
+.boxIn
+  width: 100%
+  // height: 45vh
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  transition: all 0.3s
+  box-sizing: border-box
+  padding: 2em .5em
+  h2
+    width: calc( 100% - 1em )
+    padding: .25em .5em
+    background-color: #fff
+    border-top-right-radius: 1.5em
+    border-bottom-right-radius: 1.5em
+  .goods
+    box-sizing: border-box
+    padding: 1em 
+    background-color: #eee 
+    width: calc( 100% / 3 - 3em )
+    border: 1px solid #ccc
+    margin: 0 .5em
+    margin-bottom: 1em
+    border-radius: .5em
+    flex: 1
+    min-width: 370px
+    &:hover img
+      transform: scale(1.1)
+      border-radius: .5em
+      border: 4px solid #fff
+      box-shadow: 0 0 1em #9e9e9e
+    h3 
+      border-bottom: 1px solid #ccc
+      padding-bottom: .25em
+    img
+      width: 100%
+      border-radius: 0
+      transition: all .3s
+      border: 4px solid #ccc
+      box-shadow: 0 0 0em #ccc
+    p.description
+      color: #666
+    small
+      display: block
+      text-align: right
+      big 
+        font-size: 1.5em
+        color: red
+
+@for $i from 1 through 6
+  .boxIn
+    &#box#{$i}
+      // background-color: nth($colors, $i)
+      h2
+        color: nth($colors, $i)
+        border-left: .5em solid nth($colors, $i)
+  nav
+    a:nth-child(#{$i})
+      background-color: nth($colors, $i)
+      text-shadow: 0 0 3px darken(nth($colors, $i),40)
+      border-bottom: 2px solid darken(nth($colors, $i),20)
+      border-right: 2px solid darken(nth($colors, $i),20)
+[id^="box"]
+      scroll-margin-top: 3em
+
+
+
+.goTop
+  width: 3rem 
+  height: 3rem
+  border-radius: .5rem
+  background-color: #ff7c25
+  color: #fff
+  position: sticky
+  bottom: 3rem 
+  left: 100%
+  margin-right: -2em
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 2em
+
+  

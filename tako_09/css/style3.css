@@ -38,6 +38,11 @@ body {
   transform: scale(1.05);
   z-index: 1;
 }
+.layout > div a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 .layout .img1 {
   background-position: -357px 393px;
 }

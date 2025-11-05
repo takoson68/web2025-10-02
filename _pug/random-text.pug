@@ -1,0 +1,20 @@
+//- random-text.pug
+- function randomText(n = 15) {
+-   const pool = 'abcdefghijklmnopqrstuvwxyz';
+-   let result = '';
+-   for (let i = 0; i < n; i++) {
+-     let word = '';
+-     for (let j = 0; j < 3 + Math.random() * 5; j++)
+-       word += pool[Math.floor(Math.random() * pool.length)];
+-     result += word + ' ';
+-   }
+-   return result.trim() + '.';
+- }
+
+//- 中文假文版本，可選擇使用
+- function randomChinese() {
+-   const parts = ['這款', '產品', '設計', '採用', '高品質', '材質', '適合', '日常', '使用', '提供', '舒適', '體驗', '外觀', '時尚', '耐用'];
+-   let text = '';
+-   for (let i = 0; i < 8; i++) text += parts[Math.floor(Math.random() * parts.length)];
+-   return text + '。';
+- }
