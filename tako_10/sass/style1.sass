@@ -1,0 +1,147 @@
+
+$bg-body: #f5f6f7
+$bg-card: #fff
+$border-color: #e0e0e0
+$text-color: #333
+$shadow: 0 3px 10px rgba(0,0,0,.08)
+$radius: 12px
+$gap: 10px
+
+// 主色
+$color-a: #6ecc91
+$color-b: #ff9aa2
+$color-c: #8dc6ff
+$color-d: #ffd87a
+
+// 底層亮色
+$light-a: lighten($color-a, 15%)
+$light-b: lighten($color-b, 15%)
+$light-c: lighten($color-c, 15%)
+$light-d: lighten($color-d, 15%)
+
+
+body
+  margin: 0
+  font-family: 'Segoe UI', '微軟正黑體', sans-serif
+  background: $bg-body
+  color: $text-color
+  line-height: 1.6
+
+h2
+  text-align: center
+  background: #333
+  color: #fff
+  margin: 0
+  padding: 12px
+  font-size: 1.1rem
+  letter-spacing: 1px
+
+section
+  width: 90%
+  max-width: 1280px
+  margin: 40px auto
+  background: $bg-card
+  border-radius: $radius
+  box-shadow: $shadow
+  overflow: hidden
+  transition: transform .2s ease, box-shadow .2s ease
+
+  &:hover
+    transform: translateY(-3px)
+    box-shadow: 0 5px 16px rgba(0,0,0,.1)
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: $gap // 區塊內元素間格
+  padding: 20px
+  min-height: 180px
+  background: #fafafa
+  border-top: 1px solid $border-color
+  transition: all .3s ease
+
+
+.item
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  color: #222
+  font-weight: 600
+  border-radius: 10px
+  height: 100px
+  flex: 0 0 auto
+  overflow: hidden
+  box-shadow: 0 3px 8px rgba(0,0,0,.08)
+  transition: all .25s ease
+  isolation: isolate
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    z-index: -1
+    border-radius: inherit
+    transform: translateY(3px)
+    opacity: 0.95
+    transition: transform .25s ease, opacity .25s ease
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 6px 16px rgba(0,0,0,.15)
+    &::before
+      transform: translateY(0)
+      opacity: 1
+
+
+  &:nth-child(4n+1)
+    background: $color-a
+    &::before
+      background: $light-a
+  &:nth-child(4n+2)
+    background: $color-b
+    &::before
+      background: $light-b
+  &:nth-child(4n+3)
+    background: $color-c
+    &::before
+      background: $light-c
+  &:nth-child(4n)
+    background: $color-d
+    &::before
+      background: $light-d
+
+
+.full
+  .item
+    flex: 1
+    height: 160px
+    font-size: 1.4rem
+    letter-spacing: 2px
+
+.two
+  flex-wrap: wrap
+  justify-content: space-between
+  .item
+    flex: 1
+    min-width: 0
+    font-size: 1.2rem
+
+.three
+  flex-wrap: wrap
+  justify-content: space-around
+  .item
+    flex: 1
+    font-size: 1.2rem
+    min-width: 380px
+
+.four
+  flex-wrap: wrap
+  justify-content: space-between
+  align-content: center
+  .item
+    flex: 1
+    height: 120px
+    font-size: 1.1rem
+    min-width: 280px
