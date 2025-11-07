@@ -1,0 +1,81 @@
+html ,body 
+  margin: 0
+  padding: 0 
+*
+  // border: 1px solid #333
+  box-sizing: border-box
+.body
+  // background-color: #333
+  width: 1024px
+  height: 100vh 
+  margin: 0
+  padding: 0
+  display: flex 
+  flex-direction: column
+  margin: 0 auto
+  border: ridge
+  .top 
+    height: 65px 
+    display: inline-flex
+    background-size: contain
+    background-position: center
+    background-image: url('../images/logo.png')
+    background-repeat: no-repeat
+    border-bottom: ridge
+    > div 
+    // .top_logo1
+    //   width: 65px
+    //   background-image: url('../images/logo1.png')
+    // .top_logo2
+    //   flex: 1
+    //   background-image: url('../images/logo2.png')
+    // .top_logo3
+    //   width: 65px
+    //   background-image: url('../images/logo3.png')
+
+  .main
+    flex: 1 
+    // background-color: #333
+    display: flex 
+    .menu
+      width: 215px
+      border-right: ridge
+      display: flex
+      flex-direction: column
+      h2 
+        width: 100%
+        font-size: 1.25em
+        text-align: center
+        color: #ff6fa7
+        margin: 0
+        padding: .5em 
+      ul 
+        flex: 1
+        list-style: none
+        padding: 0
+        margin: 0
+        li 
+          background-image: url('../images/menu1.png')
+          background-position: center
+          background-repeat: no-repeat
+          background-size: auto
+          padding: .5em 1em
+          a 
+            display: block
+            width: 100%
+            height: 100%
+            text-align: center
+      .update
+        border-top: ridge 
+        height: 25px 
+        felx: 0 0 25px
+        font-size: .8em
+        display: flex
+        justify-content: center
+        align-items: center
+    .content
+      flex: 1
+      marquee
+        height: 29px
+        border-bottom: ridge
+        color: blue
