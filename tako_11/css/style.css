@@ -1,38 +1,45 @@
+@charset "UTF-8";
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
+  font-family: "標楷體";
 }
 
 .body {
   width: 1024px;
-  height: 100vh;
+  height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  border: ridge;
+  border: 1px solid #ccc;
+  height: 768px;
 }
 .body .top {
+  width: 1000px;
   height: 65px;
   display: inline-flex;
-  background-size: contain;
-  background-position: center;
-  background-image: url("../images/logo.png");
-  background-repeat: no-repeat;
-  border-bottom: ridge;
+  border: 1px solid #ccc;
+  padding: 4px 20px;
 }
 .body .main {
   flex: 1;
+  width: 1000px;
   display: flex;
+  justify-content: center;
+  gap: 15px;
+  overflow: auto;
 }
 .body .main .menu {
   width: 215px;
-  border-right: ridge;
+  border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
 }
@@ -40,7 +47,7 @@ html, body {
   width: 100%;
   font-size: 1.25em;
   text-align: center;
-  color: #ff6fa7;
+  color: #ff00ff;
   margin: 0;
   padding: 0.5em;
 }
@@ -56,6 +63,10 @@ html, body {
   background-repeat: no-repeat;
   background-size: auto;
   padding: 0.5em 1em;
+  margin-top: 0.2em;
+}
+.body .main .menu ul li:hover {
+  background-image: url("../images/menu2.png");
 }
 .body .main .menu ul li a {
   display: block;
@@ -64,19 +75,121 @@ html, body {
   text-align: center;
 }
 .body .main .menu .update {
-  border-top: ridge;
+  border: 1px solid #ccc;
   height: 25px;
-  felx: 0 0 25px;
-  font-size: 0.8em;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .body .main .content {
-  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 770px;
 }
 .body .main .content marquee {
   height: 29px;
-  border-bottom: ridge;
+  line-height: 29px;
   color: blue;
+  border: 1px solid #ccc;
+}
+.body .main .content .content-init {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+.body .main .content .content-init iframe {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+}
+
+.footer {
+  height: 20px;
+  width: 1000px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.main_page {
+  background-image: url("../images/0101.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: 0 0;
+  overflow: auto;
+}
+.main_page .box {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 1em;
+}
+.main_page .box .con {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "標楷體";
+  color: #0000ff;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.guitar_history, .guitar_event, .guitar_learning {
+  background-image: url("../images/0101.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: 0 0;
+  overflow: auto;
+}
+.guitar_history h2, .guitar_event h2, .guitar_learning h2 {
+  text-align: center;
+  padding: 0 1em;
+  color: #ff0000;
+}
+.guitar_history nav, .guitar_event nav, .guitar_learning nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em;
+}
+.guitar_history nav a, .guitar_event nav a, .guitar_learning nav a {
+  display: inline-flex;
+  font-family: "新細明體";
+}
+.guitar_history pre, .guitar_history p, .guitar_event pre, .guitar_event p, .guitar_learning pre, .guitar_learning p {
+  font-size: 16px;
+  color: #ff0000;
+  margin-bottom: 1em;
+  font-weight: bold;
+  padding: 0 1em;
+}
+.guitar_history pre#a, .guitar_history p#a, .guitar_event pre#a, .guitar_event p#a, .guitar_learning pre#a, .guitar_learning p#a {
+  color: #800000;
+}
+.guitar_history pre#b, .guitar_history p#b, .guitar_event pre#b, .guitar_event p#b, .guitar_learning pre#b, .guitar_learning p#b {
+  color: #0000FF;
+}
+.guitar_history pre#c, .guitar_history p#c, .guitar_event pre#c, .guitar_event p#c, .guitar_learning pre#c, .guitar_learning p#c {
+  color: #00FF00;
+}
+.guitar_history pre#d, .guitar_history p#d, .guitar_event pre#d, .guitar_event p#d, .guitar_learning pre#d, .guitar_learning p#d {
+  color: #000000;
+}
+
+.guitar_learning h2 {
+  color: #00FFFF;
+}
+.guitar_learning ul {
+  display: block;
+  list-style: none;
+}
+.guitar_learning ul li {
+  display: block;
+  padding: 1em;
+}
+.guitar_learning ul li a {
+  display: block;
+  text-align: center;
+}
+.guitar_learning ul li:hover a {
+  color: red;
 }
