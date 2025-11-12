@@ -4,13 +4,11 @@ html ,body
   height: 100%
   overflow: hidden
 *
-  // border: 1px solid #333
   box-sizing: border-box
   font-family: '標楷體'
-body
+
   
 .body
-  // background-color: #333
   width: 1024px
   height: 100% 
   margin: 0
@@ -24,27 +22,13 @@ body
     width: 1000px
     height: 65px 
     display: inline-flex
-    // background-size: contain
-    // background-position: center
-    // background-image: url('../images/logo.png')
-    // background-repeat: no-repeat
     border: 1px solid #ccc
     padding: 4px 20px
     > div 
-    // .top_logo1
-    //   width: 65px
-    //   background-image: url('../images/logo1.png')
-    // .top_logo2
-    //   flex: 1
-    //   background-image: url('../images/logo2.png')
-    // .top_logo3
-    //   width: 65px
-    //   background-image: url('../images/logo3.png')
 
   .main
     flex: 1 
     width: 1000px
-    // background-color: #333
     display: flex 
     justify-content: center
     gap: 15px
@@ -84,13 +68,11 @@ body
       .update
         border: 1px solid #ccc
         height: 25px 
-        // felx: 0 0 25px
         font-size: 16px
         display: flex
         justify-content: center
         align-items: center
     .content
-      // flex: 1
       overflow: hidden
       display: flex
       flex-direction: column
@@ -114,37 +96,35 @@ body
   width: 1000px
   text-align: center
   border: 1px solid #ccc
-.main_page 
+
+
+
+.box 
+  background-position: 0 0
   background-image: url('../images/0101.jpg')
   width: 100% 
   height: 100%
-  background-position: 0 0
-  overflow: auto
-  .box 
-    width: 100% 
-    height: 100%
+  text-align: center
+  padding: 1em
+  .pic 
+  .con
+    font-size: 24px
+    font-weight: bold
+    font-family: '標楷體'
+    color: #0000ff
     text-align: center
-    padding: 1em
-    .pic 
-    .con
-      font-size: 24px
-      font-weight: bold
-      font-family: '標楷體'
-      color: #0000ff
-      text-align: center
-      margin-top: 2em
+    margin-top: 2em
 
 
 .guitar_history,.guitar_event,.guitar_learning
   background-image: url('../images/0101.jpg')
-  width: 100% 
-  height: 100%
   background-position: 0 0
   overflow: auto
   h2 
     text-align: center
     padding: 0 1em
     color: #ff0000
+    margin: 0
   nav 
     display: flex
     justify-content: space-around
@@ -158,7 +138,8 @@ body
     margin-bottom: 1em
     font-weight: bold
     padding: 0 1em
-
+    position: relative
+    text-align: left
     &#a 
       color: #800000
     &#b 
@@ -186,3 +167,9 @@ body
       &:hover
         a 
           color: red
+
+
+a.gotop
+  position: absolute         
+  right: 1em
+  top: 45% 
