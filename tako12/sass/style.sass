@@ -1,0 +1,165 @@
+body , html
+  margin: 0
+  font-size: 16px
+  width: 100%
+  height: 100%
+*
+  box-sizing: border-box
+  font-family:  '標楷體','Noto Sans TC', 'Microsoft JhengHei', sans-serif
+
+.myBody
+  margin: 0 auto
+  width: 1024px
+  height: 768px
+  // border: 1px solid #000
+  padding: 0 12px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+header 
+  height: 65px
+  // background-color: #ddd
+  border: 1px solid #000
+
+  a.logo 
+    padding: 2px 24px 
+    display: block
+    img 
+      width: 100%
+      // height: auto
+main 
+  display: flex
+  flex-direction: row
+  flex: 1
+  border-right: 1px solid #000
+  border-left: 1px solid #000
+  nav.navbar 
+    width: 215px
+    display: flex
+    flex-direction: column
+    h2 
+      font-size: 24px
+      line-height: 48px
+      text-align: center
+      text-decoration: underline
+      text-decoration-color: #000
+      text-underline-offset: 8px
+      color: #FF00FF
+    ul 
+      list-style-type: none
+      padding: 0
+      margin: 0
+      flex: 1
+      li
+        width: 100%
+        padding: .5em 1em
+        background-image: url(../images/menu1.png)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: auto
+        margin: 4px 0
+        &:hover
+          background-image: url(../images/menu2.png)
+        a 
+          width: 100%
+          height: 100%
+          display: inline-flex 
+          justify-content: center
+          align-items: center
+    .date 
+      height: 25px
+      line-height: 25px
+      text-align: center
+      border-top: 1px solid #000
+section.content 
+  flex: 1
+  border-left: 1px solid #000
+  marquee 
+    color: #0000FF
+    border-bottom: 1px solid #000
+    height: 29px
+    line-height: 29px
+  .content 
+    height: 100% 
+    width: 100%
+    iframe 
+      width: 100%
+      height: calc( 100% - 40px )
+
+footer 
+  border-top: 1px solid #000
+  height: 20px
+  text-align: center
+  line-height: 20px
+  border-bottom: 1px solid #000
+  border-right: 1px solid #000
+  border-left: 1px solid #000
+.con_body 
+  width: 100%
+  min-height: 100%
+  background-image: url(../images/0101.jpg)
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 1em 2em
+  .blue
+    color: #0000FF
+    text-align: center
+    font-size: 24px
+  .red 
+    color: #FF0000
+    font-size: 16px
+  pre 
+    font-weight: bold
+    width: 100%
+    position: relative
+  h2.red 
+    font-size: 20px
+  p 
+    
+#a1
+  color: #0000FF
+  b.event 
+    display: block
+    color: #800000
+#a2
+  color: #FF0000
+#a3
+  color: #00FF00
+
+#a4
+  color: #000000
+
+
+
+.guitar_learning
+  h2 
+    color: #00FFFF
+
+  ul 
+    display: block
+    list-style: none
+    li 
+      display: block
+      padding: 1em
+      a 
+        display: block
+        text-align: center
+      &:hover
+        a 
+          color: red
+
+
+.menu
+  display: inline-flex
+  width: 100%
+  justify-content: space-around
+  align-items: center
+  padding: 1.5em 0
+
+
+
+a.gotop
+  position: absolute         
+  right: 1em
+  top: 45% 
