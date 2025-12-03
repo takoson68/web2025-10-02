@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="./css/style.css")
+    style 
+      //- include ../css/style.css 
+  body 
+    .container 
+      h1 成績判斷
+      div 
+        label(for="name") 姓名: 
+        input#name(type="text", placeholder="請輸入姓名")
+      div 
+        label(for="score") 分數: 
+        input#score(type="number", placeholder="請輸入分數")
+      button#submitBtn 送出
+      #result    
+  script(src="./js/main.js")
+  script 
+    //- include ../js/main.js 
+
+

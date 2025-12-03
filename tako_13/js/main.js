@@ -6,7 +6,7 @@
     button.addEventListener('click', () => {
       const btnClass = button.className;
       box.className = 'box ' + btnClass;
-
+      console.log(btnClass);
     });
   });
 

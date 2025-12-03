@@ -1,0 +1,41 @@
+doctype html
+html(lang="zh-TW")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Vue 計算機
+    link(rel="stylesheet", href="./css/style_3.css")
+  body 
+    #app
+      .container
+        .calculator
+          .display
+            .history {{ history }}
+            input.calc-display(type="text", readonly, :value="display")
+          .buttons
+            button.btn.operator(@click="clear") C
+            button.btn.operator(@click="backspace") ⌫
+            button.btn.operator(@click="percent") %
+            button.btn.operator(@click="operate('÷')") ÷
+            
+            button.btn.number(@click="appendNumber('7')") 7
+            button.btn.number(@click="appendNumber('8')") 8
+            button.btn.number(@click="appendNumber('9')") 9
+            button.btn.operator(@click="operate('×')") ×
+            
+            button.btn.number(@click="appendNumber('4')") 4
+            button.btn.number(@click="appendNumber('5')") 5
+            button.btn.number(@click="appendNumber('6')") 6
+            button.btn.operator(@click="operate('-')") -
+            
+            button.btn.number(@click="appendNumber('1')") 1
+            button.btn.number(@click="appendNumber('2')") 2
+            button.btn.number(@click="appendNumber('3')") 3
+            button.btn.operator(@click="operate('+')") +
+            
+            button.btn.number.zero(@click="appendNumber('0')") 0
+            button.btn.number(@click="appendNumber('.')") .
+            button.btn.equal(@click="calculate") =
+
+  script(src="../vendors/vue/vue.min.js") 
+  script(src="./js/main_3.js")

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 計算機</title>
+    <link rel="stylesheet" href="./css/style_3.css">
+  </head>
+  <body> 
+    <div id="app">
+      <div class="container">
+        <div class="calculator">
+          <div class="display">
+            <div class="history">{{ history }}</div>
+            <input class="calc-display" type="text" readonly :value="display">
+          </div>
+          <div class="buttons">
+            <button class="btn operator" @click="clear">C</button>
+            <button class="btn operator" @click="backspace">⌫</button>
+            <button class="btn operator" @click="percent">%</button>
+            <button class="btn operator" @click="operate('÷')">÷</button>
+            <button class="btn number" @click="appendNumber('7')">7</button>
+            <button class="btn number" @click="appendNumber('8')">8</button>
+            <button class="btn number" @click="appendNumber('9')">9</button>
+            <button class="btn operator" @click="operate('×')">×</button>
+            <button class="btn number" @click="appendNumber('4')">4</button>
+            <button class="btn number" @click="appendNumber('5')">5</button>
+            <button class="btn number" @click="appendNumber('6')">6</button>
+            <button class="btn operator" @click="operate('-')">-</button>
+            <button class="btn number" @click="appendNumber('1')">1</button>
+            <button class="btn number" @click="appendNumber('2')">2</button>
+            <button class="btn number" @click="appendNumber('3')">3</button>
+            <button class="btn operator" @click="operate('+')">+</button>
+            <button class="btn number zero" @click="appendNumber('0')">0</button>
+            <button class="btn number" @click="appendNumber('.')">.</button>
+            <button class="btn equal" @click="calculate">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../vendors/vue/vue.min.js"> </script>
+  <script src="./js/main_3.js"></script>
+</html>

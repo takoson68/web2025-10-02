@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style_1.css">
+    <style> </style>
+  </head>
+  <body> 
+    <div class="container">
+      <h1>財富自由計算機</h1>
+      <div class="calculator">
+        <div class="form-wrapper">
+          <div class="input-group">
+            <label for="expenses">每月基礎開銷 (元)</label>
+            <input id="expenses" type="number" value="30000">
+          </div>
+          <div class="input-group">
+            <label for="years">目標年限 (年)</label>
+            <input id="years" type="number" value="20">
+          </div>
+          <div class="input-group">
+            <label for="current-savings">目前存款 (元)</label>
+            <input id="current-savings" type="number" value="0">
+          </div>
+          <div class="input-group">
+            <label for="rate">預期年化報酬率 (%)</label>
+            <input id="rate" type="number" value="5" step="0.1">
+          </div>
+          <button id="calculate-btn">開始計算</button>
+        </div>
+        <div class="result" id="result">
+          <div class="placeholder-text">
+            <h3>準備好規劃未來了嗎？</h3>
+            <p>輸入左側資訊並點擊「開始計算」，<br>您的財富自由藍圖將顯示於此。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/main_1.js"></script>
+  <script> </script>
+</html>

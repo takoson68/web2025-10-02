@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="./css/style_1.css")
+    style 
+      //- include ../css/style.css 
+  body 
+    .container
+      h1 財富自由計算機
+      .calculator
+        .form-wrapper
+          .input-group
+            label(for="expenses") 每月基礎開銷 (元)
+            input#expenses(type="number", value="30000")
+          .input-group
+            label(for="years") 目標年限 (年)
+            input#years(type="number", value="20")
+          .input-group
+            label(for="current-savings") 目前存款 (元)
+            input#current-savings(type="number", value="0")
+          .input-group
+            label(for="rate") 預期年化報酬率 (%)
+            input#rate(type="number", value="5", step="0.1")
+          button#calculate-btn 開始計算
+        .result#result
+          .placeholder-text
+            h3 準備好規劃未來了嗎？
+            p 輸入左側資訊並點擊「開始計算」，<br>您的財富自由藍圖將顯示於此。
+  script(src="./js/main_1.js")
+  script 
+    //- include ../js/main.js 
+
+

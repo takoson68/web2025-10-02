@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="./css/style_2.css")
+    style 
+      //- include ../css/style.css 
+  body 
+    .container
+      .calculator
+        .display
+          .history#calc-history
+          input#calc-display(type="text", readonly, value="0")
+        .buttons
+          button.btn.operator(data-action="clear") C
+          button.btn.operator(data-action="backspace") ⌫
+          button.btn.operator(data-action="percent") %
+          button.btn.operator(data-action="divide") ÷
+          
+          button.btn.number(data-value="7") 7
+          button.btn.number(data-value="8") 8
+          button.btn.number(data-value="9") 9
+          button.btn.operator(data-action="multiply") ×
+          
+          button.btn.number(data-value="4") 4
+          button.btn.number(data-value="5") 5
+          button.btn.number(data-value="6") 6
+          button.btn.operator(data-action="subtract") -
+          
+          button.btn.number(data-value="1") 1
+          button.btn.number(data-value="2") 2
+          button.btn.number(data-value="3") 3
+          button.btn.operator(data-action="add") +
+          
+          button.btn.number.zero(data-value="0") 0
+          button.btn.number(data-value=".") .
+          button.btn.equal(data-action="calculate") =
+
+  script(src="./js/main_2.js") 
+//-   script(src="../../vendors/vue/vue.esm-browser.prod.js") 
+
+
