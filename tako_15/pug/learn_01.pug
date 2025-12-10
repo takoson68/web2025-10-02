@@ -8,12 +8,21 @@ html(lang="en")
     style 
       //- include ../css/style.css 
   body 
-    h1 Hello, Pug!
-    p This is a sample Pug template.111
+    //- h1 arr 
+    
+    table#myTable 
+      tr 
+        th Name
+        th Age
+        th City
+      //- tr 
+        td John Doe
+        td 30
+        td New York
 
-
-    //- script(src="./js/main.js")
-    script 
+    script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    script(src="./js/main.js")
+    //- script 
       include ../js/main.js 
 
 
