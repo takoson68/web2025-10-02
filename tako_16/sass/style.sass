@@ -1,0 +1,82 @@
+:root
+  --bg: #0f172a
+  --panel: rgba(255, 255, 255, 0.06)
+  --accent: #7c3aed
+  --accent-2: #22d3ee
+  --text: #e2e8f0
+
+body
+  min-height: 100vh
+  margin: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 24px
+  background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.25), transparent 35%), radial-gradient(circle at 80% 0%, rgba(34, 211, 238, 0.25), transparent 30%), var(--bg)
+  font-family: "Segoe UI", "Noto Sans TC", system-ui, -apple-system, sans-serif
+  color: var(--text)
+
+.btntoggle
+  position: relative
+  width: 220px
+  height: 54px
+  display: inline-flex
+  align-items: center
+  justify-items: center
+  justify-content: center
+  border-radius: 14px
+  background: linear-gradient(135deg, var(--accent), var(--accent-2))
+  color: #0b1020
+  font-weight: 700
+  letter-spacing: .5px
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.08) inset
+  cursor: pointer
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease
+  user-select: none
+
+  &::after
+    content: "切換樣式"
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12) inset
+    filter: brightness(1.05)
+
+  &:active
+    transform: translateY(0)
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.08) inset
+
+
+// .navbar
+//   position: fixed !important
+//   top: 0
+//   z-index: 100
+//   // width: 100%
+
+// RWD 圖文版型：統一圖片尺寸與文字間距
+.section
+  display: flex
+  flex-direction: column
+  gap: 12px
+
+  img
+    width: 100%
+    height: 240px !important // override .img-fluid height:auto
+    object-fit: cover
+    border-radius: 12px
+    display: block
+
+  .text
+    display: flex
+    flex-direction: column
+    gap: 6px
+
+  h2
+    margin: 0
+    font-size: 1.3rem
+    font-weight: 700
+
+  p
+    margin: 0
+    color: #4b5563

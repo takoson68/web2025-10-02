@@ -1,0 +1,48 @@
+doctype html
+html(lang="zh-Hant")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 每月定期定額未來值計算
+    link(rel="stylesheet", href="./css/style1.css")
+  body
+    .wrapper
+      .header
+        h1.title 每月定期定額未來值計算
+        .badge FUTURE VALUE
+      p.desc 輸入初始投入與每月投入、投資年數與年化報酬率（金額單位：萬元），計算期末預估金額並查看逐年變化。
+      .card
+        .form
+          .field
+            label(for="initial") 初始投入 (萬元)
+            input#initial.input(type="number" min="0" value="0" placeholder="例如 20")
+          .field
+            label(for="principal") 每月投入 (萬元)
+            input#principal.input(type="number" min="0" value="1" placeholder="例如 1")
+          .field
+            label(for="years") 投資時間 (年)
+            input#years.input(type="number" min="1" step="1" value="10" placeholder="例如 10")
+          .field
+            label(for="rate") 投資利率 (年化 %)
+            input#rate.input(type="number" step="0.1" value="5" placeholder="例如 5")
+          .actions
+            button#calcBtn.btn 計算
+        .summary
+          .stat
+            span.stat-label 期末金額
+            span#resultValue.stat-value -- 元
+          .stat
+            span.stat-label 總投入
+            span#totalInvested.stat-value -- 元
+          .stat
+            span.stat-label 總報酬
+            span#totalReturn.stat-value -- 元
+        ul#yearList.year-list
+        p#errorMsg.error
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    )
+    script(src="./js/main1.js")

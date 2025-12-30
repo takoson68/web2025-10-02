@@ -1,26 +1,22 @@
-$(document).ready(() => {
+﻿$(document).ready(() => {
   const data = [
     { name: 'John Doe', age: 30, city: 'New York' },
     { name: 'Jane Smith', age: 25, city: 'London' },
-    { name: 'Bob Johnson', age: 40, city: 'Paris' }
+    { name: 'Bob Johnson', age: 40, city: 'Paris' },
+    { name: 'Otto Popen', age: 40, city: 'Ban Gon' }
   ];
 
   const $myTable = $('#myTable');
 
-  // myTable.innerHTML += `
-  //   <tr>
-  //     <td>Jane Smith</td>
-  //     <td>25</td>
-  //     <td>London</td>
-  //   </tr>
-  // `;
-
   $.each(data, (_, item) => {
-    const $row = $('<tr></tr>')
-      .append($('<td></td>').text(item.name))
-      .append($('<td></td>').text(item.age))
-      .append($('<td></td>').text(item.city));
 
-    $myTable.append($row);
+    let row = `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.age}</td>
+        <td>${item.city}</td>
+      </tr>
+    `;
+    $myTable.append(row);
   });
 });
