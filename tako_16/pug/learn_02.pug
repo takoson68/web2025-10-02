@@ -1,0 +1,260 @@
+﻿doctype html
+html(lang="zh-Hant")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 鋼琴之島｜RWD 練習
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="./css/learn_02.css")
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.sticky-top.shadow-sm
+      .container
+        a.navbar-brand(href="#")
+          span.me-2 🎹
+          span 鋼琴之島
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarTop", aria-controls="navbarTop", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        #navbarTop.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(href="#hero") 首頁
+            li.nav-item
+              a.nav-link(href="#courses") 精選課程
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown") 鋼琴指南
+              ul.dropdown-menu
+                li: a.dropdown-item(href="#intro") 琴鍵基礎
+                li.dropdown-submenu
+                  a.dropdown-item.dropdown-toggle(href="#") 演奏風格
+                  ul.dropdown-menu
+                    li: a.dropdown-item(href="#gallery") 古典美學
+                    li: a.dropdown-item(href="#gallery") 爵士即興
+                    li: a.dropdown-item(href="#gallery") 流行編曲
+                li.dropdown-submenu
+                  a.dropdown-item.dropdown-toggle(href="#") 進階工具
+                  ul.dropdown-menu
+                    li: a.dropdown-item(href="#lightbox") 聲音設計
+                    li: a.dropdown-item(href="#faq") 練習策略
+            li.nav-item
+              a.nav-link(href="#contact") 聯絡
+
+    // Hero + Carousel
+    section#hero.hero.position-relative
+      #heroCarousel.carousel.slide(data-bs-ride="carousel")
+        .carousel-indicators
+          button(type="button", data-bs-target="#heroCarousel", data-bs-slide-to="0", class="active", aria-label="Slide 1")
+          button(type="button", data-bs-target="#heroCarousel", data-bs-slide-to="1", aria-label="Slide 2")
+          button(type="button", data-bs-target="#heroCarousel", data-bs-slide-to="2", aria-label="Slide 3")
+        .carousel-inner
+          .carousel-item.active
+            img(src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80", class="d-block w-100", alt="黑白琴鍵")
+          .carousel-item
+            img(src="https://images.unsplash.com/photo-1461785325214-6b2c3120f2d3?auto=format&fit=crop&w=1600&q=80", class="d-block w-100", alt="演奏現場")
+          .carousel-item
+            img(src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1600&q=80", class="d-block w-100", alt="琴房練習")
+        button.carousel-control-prev(type="button", data-bs-target="#heroCarousel", data-bs-slide="prev")
+          span.carousel-control-prev-icon(aria-hidden="true")
+          span.visually-hidden Previous
+        button.carousel-control-next(type="button", data-bs-target="#heroCarousel", data-bs-slide="next")
+          span.carousel-control-next-icon(aria-hidden="true")
+          span.visually-hidden Next
+      .hero-content
+        .container
+          .row.align-items-center
+            .col-lg-6
+              span.badge.bg-light.text-dark.mb-3 RWD + Bootstrap 實作
+              h1.display-4.fw-bold.mb-3 鋼琴之島｜從零到舞台的聲音旅程
+              p.lead.mb-4
+                | 透過循序課程、演奏案例與互動聆聽，打造你的專屬琴音。涵蓋輪播、燈箱、卡片、導航、多層級選單與頁尾。
+              .d-flex.flex-wrap.gap-3
+                a.btn.btn-primary.btn-lg(href="#courses") 立刻選課
+                a.btn.btn-outline-light.btn-lg(href="#gallery") 聆聽示範
+            .col-lg-5.ms-lg-auto.d-none.d-lg-block
+              .p-4.bg-light.bg-opacity-10.rounded-4
+                h5.fw-semibold.mb-3 本頁練習重點
+                ul.list-unstyled.mb-0
+                  li.mb-2 ✅ Bootstrap 5 輪播 & 燈箱 Modal
+                  li.mb-2 ✅ RWD Cards / Grid / Navbar / Footer
+                  li ✅ 多層級下拉選單與斷點排版
+
+    // Intro
+    section#intro.py-5
+      .container
+        .row.align-items-center.gy-4
+          .col-lg-6
+            h2.fw-bold.mb-3 探索琴鍵的故事
+            p.text-secondary.mb-4 從古典到爵士，從練習室到舞台，鋼琴是情感的翻譯。
+            .d-flex.gap-3
+              a.btn.btn-dark(href="#lightbox") 聽音色
+              a.btn.btn-outline-dark(href="#faq") 看策略
+          .col-lg-6
+            -
+              var features = [
+                { title: "手感控制", text: "力度分層、踏板運用與音色平衡。" },
+                { title: "節奏語彙", text: "古典呼吸、爵士 Swing、流行切分。" },
+                { title: "和聲色彩", text: "轉位、延伸和弦與再和聲技巧。" },
+                { title: "舞台準備", text: "排練流程、燈光音控與臨場心態。" }
+              ]
+            .row.row-cols-1.row-cols-md-2.g-3
+              each feature, i in features
+                .col
+                  .border.rounded-4.p-3.h-100.bg-white.shadow-sm
+                    .feature-icon.mb-3 #{i + 1}
+                    h6.fw-semibold.mb-2 #{feature.title}
+                    p.small.text-secondary.mb-0 #{feature.text}
+
+    // Cards
+    section#courses.py-5.bg-white
+      .container
+        .d-flex.justify-content-between.align-items-center.mb-4.flex-wrap.gap-3
+          h2.fw-bold.mb-0 精選課程
+          a.btn.btn-outline-primary.btn-sm(href="#contact") 預約試聽
+        -
+          var cards = [
+            { title: "古典基礎班", text: "音階、分解和弦與曲式理解，奠定扎實指法與表情。", tag: "初階" },
+            { title: "爵士即興班", text: "ii-V-I、Walking Bass、節奏語彙與 Solo 架構。", tag: "進階" },
+            { title: "流行編曲班", text: "主歌副歌編排、左手型態、和弦轉位與聲部填寫。", tag: "實務" },
+            { title: "舞台實戰班", text: "節目設計、麥克風與踏板設定，處理臨場突發。", tag: "Live" },
+            { title: "錄音製作班", text: "麥克風擺位、MIDI 編輯、混音基本與動態控制。", tag: "製作" },
+            { title: "兒童啟蒙班", text: "遊戲化節奏、視譜力養成，培養穩定練習習慣。", tag: "親子" }
+          ]
+        .row.row-cols-1.row-cols-md-2.row-cols-xl-3.g-4
+          each card in cards
+            .col
+              .card.h-100.shadow-sm.border-0
+                .card-body
+                  span.badge.bg-primary-subtle.text-primary.mb-2 #{card.tag}
+                  h5.card-title.fw-bold #{card.title}
+                  p.card-text.text-secondary #{card.text}
+                  .d-flex.justify-content-between.align-items-center
+                    small.text-muted RWD 卡片示範
+                    a.link-primary(href="#contact") 了解更多 →
+
+    // Gallery + Lightbox
+    section#gallery.py-5
+      .container
+        .d-flex.justify-content-between.align-items-center.mb-4.flex-wrap.gap-3
+          h2.fw-bold.mb-0 聽覺光影
+          span.text-muted.small 點擊圖片以燈箱播放
+        -
+          var gallery = [
+            { title: "莫札特的透明", img: "https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=900&q=80" },
+            { title: "爵士的夜色", img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80" },
+            { title: "即興的線條", img: "https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=900&q=80" }
+          ]
+        .row.row-cols-1.row-cols-md-3.g-4
+          each item in gallery
+            .col
+              a(href="#", data-bs-toggle="modal", data-bs-target="#galleryModal", data-img=item.img, data-title=item.title, aria-label=`開啟 ${item.title} 燈箱`)
+                .gallery-thumb
+                  img(src=item.img, class="w-100 h-100", alt=item.title)
+
+    // Lightbox Modal
+    #galleryModal.modal.fade(tabindex="-1", aria-labelledby="galleryModalLabel", aria-hidden="true")
+      .modal-dialog.modal-dialog-centered.modal-lg
+        .modal-content.bg-dark.text-white
+          .modal-header.border-0
+            h5.modal-title#galleryModalLabel 聆聽示範
+            button.btn-close.btn-close-white(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body.p-0
+            img#galleryModalImg(src="", alt="示範音色", class="w-100 rounded-bottom")
+          .modal-footer.border-0.justify-content-between
+            span.small.text-secondary 以燈箱呈現示範圖／音色概念
+            button.btn.btn-outline-light(type="button", data-bs-dismiss="modal") 關閉
+
+    // FAQ / Accordion
+    section#faq.py-5.bg-white
+      .container
+        .row.gy-4
+          .col-lg-6
+            h2.fw-bold.mb-3 常見練習策略
+            p.text-secondary 建議每次練習分段目標，先慢後快，並錄音回聽。
+          .col-lg-6
+            .accordion(id="practiceAccordion")
+              .accordion-item
+                h2.accordion-header
+                  button.accordion-button.fw-semibold(type="button", data-bs-toggle="collapse", data-bs-target="#collapseOne") 拆拍與節奏分層
+                #collapseOne.accordion-collapse.collapse.show(data-bs-parent="#practiceAccordion")
+                  .accordion-body.small 將小節拆成拍點與弱拍，先穩定節拍器，再加入力度變化，最後加入踏板。
+              .accordion-item
+                h2.accordion-header
+                  button.accordion-button.collapsed.fw-semibold(type="button", data-bs-toggle="collapse", data-bs-target="#collapseTwo") 手指獨立與重心
+                #collapseTwo.accordion-collapse.collapse(data-bs-parent="#practiceAccordion")
+                  .accordion-body.small 以慢速練習旋律，感受每指重量與鍵盤回饋，保持腕部鬆開避免緊繃。
+              .accordion-item
+                h2.accordion-header
+                  button.accordion-button.collapsed.fw-semibold(type="button", data-bs-toggle="collapse", data-bs-target="#collapseThree") 錄音回聽
+                #collapseThree.accordion-collapse.collapse(data-bs-parent="#practiceAccordion")
+                  .accordion-body.small 錄製 30 秒片段，標記拍點與呼吸，針對模糊音或不自然的呼吸段落修正。
+
+    // CTA Ribbon
+    section#lightbox.py-5
+      .container
+        .row.align-items-center.gy-3
+          .col-lg-8
+            h3.fw-bold.mb-2 想聽更多琴音？讓我們陪你練習
+            p.text-secondary.mb-0 預約試聽或量身安排課表，從居家練習到舞台演出都有人陪。
+          .col-lg-4.text-lg-end
+            a.btn.btn-primary.btn-lg(href="#contact") 預約諮詢
+
+    // Footer
+    footer#contact.py-5.mt-4
+      .container
+        .row.gy-4
+          .col-md-4
+            h5.fw-bold.mb-3 鋼琴之島
+            p.small.text-secondary 用聲音紀錄生活的每一步。
+          .col-md-4
+            h6.fw-semibold.mb-3 快速導覽
+            ul.list-unstyled.text-secondary.small.mb-0
+              li.mb-2: a.link-light(href="#hero") 首頁
+              li.mb-2: a.link-light(href="#courses") 課程
+              li.mb-2: a.link-light(href="#gallery") 聆聽
+              li: a.link-light(href="#faq") 策略
+          .col-md-4
+            h6.fw-semibold.mb-3 聯絡
+            p.small.mb-1 ✉️ piano.island@example.com
+            p.small.mb-1 ☎️ 02-1234-5678
+            p.small.text-secondary 週一至週六 10:00-20:00
+        .border-top.border-secondary.border-opacity-25.mt-4.pt-3
+          small.text-secondary RWD 練習頁示範，含輪播、燈箱、卡片、多層級選單與頁尾。
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js")
+    script.
+      // 燈箱 Modal 圖片切換
+      var galleryModal = document.getElementById('galleryModal');
+      if (galleryModal) {
+        galleryModal.addEventListener('show.bs.modal', function (event) {
+          var trigger = event.relatedTarget;
+          var img = trigger && trigger.getAttribute('data-img');
+          var title = (trigger && trigger.getAttribute('data-title')) || '琴音示範';
+          var modalImg = galleryModal.querySelector('#galleryModalImg');
+          var modalTitle = galleryModal.querySelector('#galleryModalLabel');
+          if (img && modalImg) modalImg.src = img;
+          if (modalTitle) modalTitle.textContent = title;
+        });
+      }
+
+      // 多層級 dropdown
+      document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var submenu = toggle.nextElementSibling;
+          if (submenu) {
+            submenu.classList.toggle('show');
+            var parentMenu = submenu.parentElement && submenu.parentElement.parentElement;
+            if (parentMenu) {
+              parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                if (menu !== submenu) menu.classList.remove('show');
+              });
+            }
+          }
+        });
+      });
+      document.addEventListener('click', function () {
+        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function (menu) {
+          menu.classList.remove('show');
+        });
+      });
